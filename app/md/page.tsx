@@ -2,6 +2,8 @@ import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import InviteSecretaryForm from '@/components/InviteSecretaryForm'
 
+export const dynamic = 'force-dynamic'
+
 export default async function MDDashboard() {
   const supabase = await createClient()
 
