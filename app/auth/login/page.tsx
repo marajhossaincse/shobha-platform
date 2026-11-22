@@ -29,11 +29,11 @@ export default function LoginPage() {
       if (authError) throw authError
 
       // Get user role to redirect appropriately
-      const { data: userProfile } = await supabase
+      const { data: userProfile } = (await supabase
         .from('users')
         .select('role')
         .eq('id', data.user.id)
-        .single()
+        .single()) as any
 
       // Redirect based on role
       if (userProfile?.role === 'md') {

@@ -21,7 +21,7 @@ export default async function MDDashboard() {
       company:companies(*)
     `)
     .eq('id', user.id)
-    .single()
+    .single() as any
 
   console.log('User ID:', user.id)
   console.log('User Profile:', userProfile)
