@@ -1,10 +1,10 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
-import { connection } from 'next/server'
 import InviteSecretaryForm from '@/components/InviteSecretaryForm'
 
+export const instant = false
+
 export default async function MDDashboard() {
-  await connection()
   const supabase = await createClient()
 
   const {
